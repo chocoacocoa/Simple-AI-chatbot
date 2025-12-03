@@ -15,7 +15,7 @@
         <div id="motherDiv">
             <div id="chatHistoryContainer">
                 <div id="chatHistory">
-                        <h2>Simple AI by Chocoacocoa</h2>
+                        <h2>Simple AI</h2>
                 </div>
             </div>
             <div id="inputsAndButtons">
@@ -28,9 +28,6 @@
 <script>
     const chatHistory = document.getElementById("chatHistory")
     const sendButton = document.getElementById("sendButton");
-    
-    
-
     async function sendMessage(){
         const userInput = document.getElementById("userInput").value;
         const response = await fetch("/chat", {
@@ -50,8 +47,7 @@
     document.getElementById("userInput").addEventListener("keydown", (event)=>{
         if(event.key === "Enter"){
             sendMessage();
-        }
-            
+        } 
     });
 </script>
 </html>
