@@ -20,10 +20,15 @@
             </div>
             <div id="inputsAndButtons">
                 <input id="userInput" type="text" placeholder="send mo na message mo pre">
-                <button onclick="sendMessage()" id="sendButton">Send</button>
+                <!-- <button onclick="sendMessage()" id="sendButton">Send</button> -->
+                    <button type="button" onclick="sendMessage()">
+                        <div class="top">Send!</div>
+                        <div class="bottom"></div>
+                    </button>
             </div>
         </div>
     </main>
+    
 </body>
 <script>
     const chatHistory = document.getElementById("chatHistory")
@@ -43,7 +48,6 @@
         chatHistory.innerHTML += `<p><strong>AI:</strong>${data.reply}</p>`;
         document.getElementById("userInput").value = "";
     }
-
     document.getElementById("userInput").addEventListener("keydown", (event)=>{
         if(event.key === "Enter"){
             sendMessage();
